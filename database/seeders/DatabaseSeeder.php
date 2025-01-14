@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Comment;
+use App\Models\Game;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,10 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
         ]);
 
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Game::factory(10)->create();
+        Comment::factory(10)->create();
     }
 }

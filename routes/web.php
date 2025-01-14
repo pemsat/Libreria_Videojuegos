@@ -1,7 +1,8 @@
 <?php
 
 use App\Livewire\GameComponent;
-use App\Livewire\GameDetails;
+use App\Livewire\GameDetail;
+use App\Livewire\Games;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 
@@ -18,11 +19,8 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
+Route::get('/game/{id}', GameDetail::class)
+    ->middleware(['auth'])
+    ->name('game.detail');
 
-require __DIR__.'/auth.php';
-
-
-Route::middleware('auth')->group(function () {
-    Route::resource('videogames', GameController::class);
-});
-
+require __DIR__ . '/auth.php';
